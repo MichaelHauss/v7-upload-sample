@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: upload-legacy
+  name: upload-legacy
+spec:
+  replicas: 424
+  template:
+    metadata:
+      labels:
+        app: upload-legacy
+      name: upload-legacy
+    spec:
+      containers:
+      - name: upload-legacy
+        image: mihauss/upload-legacy
+        args:
+          - "<storage-account-connection-string>"
+
